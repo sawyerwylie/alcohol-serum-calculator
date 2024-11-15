@@ -12,9 +12,9 @@ st.title("Blood Alcohol Concentration Calculator")
 
 # User inputs
 alcohol_type = st.selectbox("Select Alcohol Type", options=list(alcohol_data.keys()))
-volume_ingested = st.number_input("Volume Ingested (in mL)", min_value=0.0, step=0.1)
-percent_solution = st.number_input("Percent Solution (%)", min_value=0.0, max_value=100.0, step=0.1)
-weight = st.number_input("Patient Weight (in kg)", min_value=0.0, step=0.1)
+volume_ingested = st.number_input("Volume Ingested (in mL)", min_value=0, step=0.1)
+percent_solution = st.number_input("Percent Solution (%)", min_value=0, max_value=100.0, step=0.1)
+weight = st.number_input("Patient Weight (in kg)", min_value=0, step=0.1)
 
 # Calculate blood concentration
 if st.button("Calculate Blood Concentration"):
