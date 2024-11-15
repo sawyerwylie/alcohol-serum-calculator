@@ -21,12 +21,9 @@ if st.button("Calculate Blood Concentration"):
     # Get the selected alcohol's properties
     specific_gravity = alcohol_data[alcohol_type]["specific_gravity"]
     volume_distribution = alcohol_data[alcohol_type]["volume_distribution"]
-    
-    # Convert percent solution to a decimal
-    percent_decimal = percent_solution / 100
 
     # Blood concentration calculation in mg/dL
-    blood_concentration_mg_dl = (volume_ingested * percent_decimal * specific_gravity * 1000) / (volume_distribution * weight * 10)
+    blood_concentration_mg_dl = (volume_ingested * percent_solution * specific_gravity) / (volume_distribution * weight)
 
     # Display result
     st.write(f"Estimated Blood Concentration of {alcohol_type}: {blood_concentration_mg_dl:.2f} mg/dL")
